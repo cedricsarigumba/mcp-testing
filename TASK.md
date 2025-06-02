@@ -60,21 +60,7 @@
 - [ ]  (If possible) Test DynamoDB interaction by checking local/mocked DB or logs.
 - [ ]  Test direct Lambda invocation if needed (`sam local invoke`).
 
-## Logging & Monitoring
-
-- [ ]  Implement basic logging for key events and errors (e.g., `console.log` for CloudWatch).
-
 ## Documentation
 
 - [ ]  Update README.md with setup instructions for local development.
 - [ ]  Update README.md with API usage examples (request/response).
-
-## Deployment (Optional - If in Scope)
-
-- [ ]  Package the application (`sam package ...` - if not using `sam deploy --guided` directly).
-- [ ]  Deploy the application to AWS (`sam deploy --guided`).
-- [ ]  Test the deployed API endpoint.
-
-## Discovered During Work
-
-- [ ]  (Empty - to be filled as project progresses)

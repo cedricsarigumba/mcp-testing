@@ -16,7 +16,6 @@ The goal of this project is to develop a backend system consisting of a REST API
 ### Technology Stack:
 -   **Language**: Node.js (as per requirements)
 -   **Runtime Environment**: AWS Lambda
--   **API Framework**: (Implicitly) Express.js or native Node.js http module within Lambda, managed by API Gateway.
 -   **Database**: AWS DynamoDB
 -   **Infrastructure as Code/Local Development**: AWS SAM CLI
 -   **AWS SDK**: AWS SDK for JavaScript in Node.js (for DynamoDB interaction)
@@ -59,13 +58,8 @@ The development will proceed in the following stages:
     * Ensure API responses for errors are consistent and informative (e.g., JSON payload with an error message).
 
 5.  **Local Testing with AWS SAM**:
-    * Use `sam build` to build the application.
-    * Use `sam local start-api` to run the API locally and test the endpoint using tools like `curl` or Postman.
-    * Use `sam local invoke` for direct Lambda function testing if needed.
+    * Use `sam local invoke` for direct Lambda function testing.
     * Iteratively test validation, data storage, and error handling.
-
-6.  **Deployment (Optional, based on project scope)**:
-    * If deployment is in scope, use `sam deploy --guided` to deploy the application to AWS.
 
 ## Design Principles
 
