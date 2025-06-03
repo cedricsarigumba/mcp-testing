@@ -9,9 +9,8 @@ The goal of this project is to develop a backend system consisting of a REST API
 1.  **REST API Endpoint**: A single endpoint to accept `POST` requests for creating new pet records.
 2.  **AWS Lambda Function**: The compute resource written in Node.js that will process incoming API requests, validate data, and interact with DynamoDB.
 3.  **AWS DynamoDB Table**: The NoSQL database used to store pet information.
-4.  **AWS API Gateway**: To expose the Lambda function as a publicly accessible HTTP API endpoint. (Managed via SAM)
-5.  **AWS SAM (Serverless Application Model)**: Framework for defining serverless application resources, enabling local testing and streamlined deployment.
-6.  **Custom Error Handling Module**: A dedicated mechanism within the Lambda function to manage and respond to errors gracefully.
+4.  **AWS SAM (Serverless Application Model)**: Framework for defining serverless application resources, enabling local testing and streamlined deployment.
+5.  **Custom Error Handling Module**: A dedicated mechanism within the Lambda function to manage and respond to errors gracefully.
 
 ### Technology Stack:
 -   **Language**: Node.js (as per requirements)
@@ -26,7 +25,7 @@ The development will proceed in the following stages:
 
 1.  **Project Setup & SAM Initialization**:
     * Initialize a new AWS SAM project (`sam init`).
-    * Configure the `template.yaml` file for the basic Lambda function and API Gateway event source.
+    * Configure the `template.yaml` file for the basic Lambda function.
     * Set up project structure for Node.js (e.g., `package.json`, handler file).
 
 2.  **DynamoDB Table Design & Definition**:
@@ -89,7 +88,7 @@ The development will proceed in the following stages:
 
 ## API Specification
 
-* **Endpoint**: `POST /pets` (The exact path might be `/pets` or `/api/pets` depending on API Gateway stage configuration in SAM)
+* **Endpoint**: `POST /api/pets`
 * **Method**: `POST`
 * **Request Body (JSON)**:
     ```json
@@ -162,7 +161,7 @@ The `template.yaml` file will define:
 
 * A fully functional AWS SAM project directory.
 * A Node.js Lambda function capable of:
-    * Receiving pet data via an API Gateway `POST` request.
+    * Receiving pet data via sam local invoke request.
     * Validating and sanitizing the input data.
     * Storing the pet information in a DynamoDB table.
     * Returning appropriate success or custom error responses.
@@ -172,6 +171,5 @@ The `template.yaml` file will define:
 ## Notes
 
 * This plan focuses solely on the backend API implementation as per the requirements. UI/Frontend components are explicitly out of scope.
-* Security best practices for AWS Lambda and API Gateway (e.g., IAM roles with least privilege, input validation) are paramount.
 * Consider adding logging (e.g., using `console.log` which goes to CloudWatch Logs) for debugging and monitoring purposes.
 * Dependency management for Node.js (e.g., `npm install` for libraries like `uuid`) should be handled within the SAM build process.

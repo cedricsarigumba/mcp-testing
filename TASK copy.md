@@ -52,7 +52,7 @@
 ## Local Testing (AWS SAM)
 
 - [ ]  Build the SAM application (`sam build`).
-- [ ]  Start the local API gateway (`sam local start-api`).
+- [ ]  Invoke the function (`sam local invoke`).
 - [ ]  Test successful pet creation using `curl` or Postman.
 - [ ]  Test input validation errors for each field.
 - [ ]  Test error handling for invalid date format for `birthday`.
