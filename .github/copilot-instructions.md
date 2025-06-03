@@ -33,6 +33,7 @@ Certainly, Plato Team Developer. Here's a **Jest-based testing guideline** that 
 - **Mark completed tasks in `TASK.md`** immediately after finishing them.
 - Add new sub-tasks or TODOs discovered during development to `TASK.md` under a “Discovered During Work” section.
 - Also update the necessary Github Issues with relevant details.
+- Do not create a PR or do any commits since it will be done manually by the developer.
 
 ### 📎 Style & Conventions for Node.js (JavaScript)
 * **Use pure JavaScript (ES6+), no TypeScript**.
