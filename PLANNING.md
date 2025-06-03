@@ -12,6 +12,25 @@ The goal of this project is to develop a backend system consisting of a REST API
 4.  **AWS SAM (Serverless Application Model)**: Framework for defining serverless application resources, enabling local testing and streamlined deployment.
 5.  **Custom Error Handling Module**: A dedicated mechanism within the Lambda function to manage and respond to errors gracefully.
 
+### Code Structure
+
+```text
+/lambda-function/
+│
+├── src/
+│   ├── handlers/
+│   │   └── index.js          # Main Lambda handler
+│   ├── services/
+│   │   └── service.js        # Business logic (e.g., DB, API calls)
+│   ├── utils/
+│   │   └── logger.js         # Logging or helper functions
+│   └── config/
+│       └── config.js         # Environment/config management
+│
+├── package.json              # Dependencies and scripts
+└── README.md                 # Project overview
+```
+
 ### Technology Stack:
 -   **Language**: Node.js 20.x (as per requirements)
 -   **Runtime Environment**: AWS Lambda
@@ -127,34 +146,7 @@ The development will proceed in the following stages:
         ```
 
 ## AWS SAM `template.yaml` Highlights
-
-The `template.yaml` file will define:
-* **`AWSTransform`: `AWS::Serverless-2016-10-31`**
-* **Globals**: Common properties for functions (e.g., runtime).
-* **Resources**:
-    * **`PetInfoFunction (AWS::Serverless::Function)`**:
-        * `Handler`: `index.handler` (or your specific file and handler function)
-        * `Runtime`: `nodejs20.x` (or a later supported version)
-        * `CodeUri`: Path to the Lambda source code directory.
-        * `Environment`:
-            * `Variables`:
-                * `DYNAMODB_TABLE_NAME`: `!Ref PetsTable`
-        * `Policies`:
-            * `DynamoDBCrudPolicy`:
-                * `TableName`: `!Ref PetsTable`
-        * `Events`:
-            * `CreatePetApi (Type: Api)`:
-                * `Path`: `/pets`
-                * `Method`: `post`
-    * **`PetsTable (AWS::Serverless::SimpleTable)`** (or `AWS::DynamoDB::Table` for more control):
-        * `PrimaryKey`:
-            * `Name`: `petId`
-            * `Type`: `String`
-        * `TableName`: `Pets` (or a dynamic name)
-        * `ProvisionedThroughput` (if not using PAY_PER_REQUEST):
-            * `ReadCapacityUnits`: 1
-            * `WriteCapacityUnits`: 1
-        *(Alternatively, BillingMode: PAY_PER_REQUEST)*
+* Use the sample file in the samples\sample_template.yaml
 
 ## Expected Output
 
