@@ -13,7 +13,7 @@ The goal of this project is to develop a backend system consisting of a REST API
 5.  **Custom Error Handling Module**: A dedicated mechanism within the Lambda function to manage and respond to errors gracefully.
 
 ### Technology Stack:
--   **Language**: Node.js (as per requirements)
+-   **Language**: Node.js 20.x (as per requirements)
 -   **Runtime Environment**: AWS Lambda
 -   **Database**: AWS DynamoDB
 -   **Infrastructure as Code/Local Development**: AWS SAM CLI
