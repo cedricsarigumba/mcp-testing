@@ -3,9 +3,7 @@
 - **Always use the Github MCP server** to check for existing code, documentation, and issues in the current repository.
 
 ### Filesystem MCP
-- **Always use the Filesystem MCP server** when searching for files or directories in the current repository.
-- **Never create new files or directories** unless explicitly instructed to do so or if part of a task from `TASK.md`.
-- **Always check for existing files** before creating new ones to avoid duplicates.
+- Only use the Filesystem MCP for local file operations if needed (you don't have access to the local).
 
 ### 🔄 Project Awareness & Context
 - **Always read `PLANNING.md`** at the start of a new conversation to understand the project's architecture, goals, style, and constraints.
