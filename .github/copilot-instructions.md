@@ -1,8 +1,11 @@
-# GitHub Copilot Instruction for Pet Information REST API
 
-You are assisting with a serverless Pet Information REST API built using AWS SAM and Node.js. The API accepts POST requests to create pet records stored in DynamoDB.
+### Github MCP
+- **Always use the Github MCP server** to check for existing code, documentation, and issues in the current repository.
 
-## Guidance for Copilot
+### 🔄 Project Awareness & Context
+- **Always read `PLANNING.md`** at the start of a new conversation to understand the project's architecture, goals, style, and constraints.
+- **Check `TASK.md`** before starting a new task. If the task isn’t listed, add it with a brief description and today's date.
+- **Use consistent naming conventions, file structure, and architecture patterns** as described in `PLANNING.md`.
 
 ### 🔄 Project Awareness & Context
 - **Always read `PLANNING.md`** at the start of a new conversation to understand the project's architecture, goals, style, and constraints.
@@ -13,10 +16,6 @@ You are assisting with a serverless Pet Information REST API built using AWS SAM
 - **Never create a file longer than 500 lines of code.** If a file approaches this limit, refactor by splitting it into modules or helper files.
 - **Organize code into clearly separated modules**, grouped by feature or responsibility.
 - **Use clear, consistent imports** (prefer relative imports within packages).
-
-Certainly, Plato Team Developer. Here's a **Jest-based testing guideline** that mirrors the structure and intent of your Pytest instructions:
-
----
 
 ### 🧪 Testing & Reliability with Jest
 * **Always write Jest unit tests for all new features** (functions, classes, components, endpoints, etc.).
@@ -32,7 +31,7 @@ Certainly, Plato Team Developer. Here's a **Jest-based testing guideline** that 
 ### ✅ Task Completion
 - **Mark completed tasks in `TASK.md`** immediately after finishing them.
 - Add new sub-tasks or TODOs discovered during development to `TASK.md` under a “Discovered During Work” section.
-- Also update the necessary Github Issues with relevant details.
+- Only do the tasks listed in `TASK.md`.
 
 ### 📎 Style & Conventions for Node.js (JavaScript)
 * **Use pure JavaScript (ES6+), no TypeScript**.
