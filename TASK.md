@@ -9,15 +9,6 @@
 - [ ]  Configure `template.yaml` for the API Gateway event source (`CreatePetApi`)
 - [ ] Test the project using sam local invoke and verify that it runs successfully
 
-## Database Setup (DynamoDB via SAM)
-
-- [ ]  Define `PetsTable` (AWS::Serverless::SimpleTable or AWS::DynamoDB::Table) in `template.yaml`
-- [ ]  Specify Primary Key (`petId` - String) for `PetsTable` in `template.yaml`
-- [ ]  List all required attributes for `PetsTable` in planning (for reference during Lambda dev, not all need to be in SAM template attribute definitions beyond keys)
-- [ ]  Set `BillingMode` to `PAY_PER_REQUEST` for `PetsTable` (or define ProvisionedThroughput)
-- [ ]  Grant Lambda function (`PetInfoFunction`) `DynamoDBCrudPolicy` for `PetsTable` in `template.yaml`
-- [ ]  Set `DYNAMODB_TABLE_NAME` environment variable for the Lambda function in `template.yaml`
-
 ## Sequence diagram
 
 - [ ]  Create a sequence diagram using PlantUML to illustrate the flow from API Gateway to Lambda to DynamoDB
