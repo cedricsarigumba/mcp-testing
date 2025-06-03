@@ -1,8 +1,16 @@
-# GitHub Copilot Instruction for Pet Information REST API
 
-You are assisting with a serverless Pet Information REST API built using AWS SAM and Node.js. The API accepts POST requests to create pet records stored in DynamoDB.
+### Github MCP
+- **Always use the Github MCP server** to check for existing code, documentation, and issues in the current repository.
 
-## Guidance for Copilot
+### Filesystem MCP
+- **Always use the Filesystem MCP server** when searching for files or directories in the current repository.
+- **Never create new files or directories** unless explicitly instructed to do so or if part of a task from `TASK.md`.
+- **Always check for existing files** before creating new ones to avoid duplicates.
+
+### 🔄 Project Awareness & Context
+- **Always read `PLANNING.md`** at the start of a new conversation to understand the project's architecture, goals, style, and constraints.
+- **Check `TASK.md`** before starting a new task. If the task isn’t listed, add it with a brief description and today's date.
+- **Use consistent naming conventions, file structure, and architecture patterns** as described in `PLANNING.md`.
 
 ### 🔄 Project Awareness & Context
 - **Always read `PLANNING.md`** at the start of a new conversation to understand the project's architecture, goals, style, and constraints.
