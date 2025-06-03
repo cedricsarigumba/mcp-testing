@@ -17,10 +17,6 @@
 - **Organize code into clearly separated modules**, grouped by feature or responsibility.
 - **Use clear, consistent imports** (prefer relative imports within packages).
 
-Certainly, Plato Team Developer. Here's a **Jest-based testing guideline** that mirrors the structure and intent of your Pytest instructions:
-
----
-
 ### 🧪 Testing & Reliability with Jest
 * **Always write Jest unit tests for all new features** (functions, classes, components, endpoints, etc.).
 * **After any logic change**, ensure existing Jest tests still pass and update them when necessary.
@@ -35,9 +31,7 @@ Certainly, Plato Team Developer. Here's a **Jest-based testing guideline** that 
 ### ✅ Task Completion
 - **Mark completed tasks in `TASK.md`** immediately after finishing them.
 - Add new sub-tasks or TODOs discovered during development to `TASK.md` under a “Discovered During Work” section.
-- Also update the necessary Github Issues with relevant details.
-- After creating each task, create a PR with a clear description of the changes made, linking to the task in `TASK.md` in Github.
-- Also add a comment to the Github Issue with the PR link and a brief summary of the changes.
+- Only do the tasks listed in `TASK.md`.
 
 ### 📎 Style & Conventions for Node.js (JavaScript)
 * **Use pure JavaScript (ES6+), no TypeScript**.
