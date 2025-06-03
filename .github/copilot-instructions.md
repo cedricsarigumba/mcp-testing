@@ -4,56 +4,59 @@ You are assisting with a serverless Pet Information REST API built using AWS SAM
 
 ## Guidance for Copilot
 
-### Project Setup
-- Initialize an AWS SAM project with a Node.js runtime.
-- Set up `template.yaml` with:
-  - One Lambda function: `PetInfoFunction`
-  - One API Gateway event: `POST /pets` named `CreatePetApi`
-  - A DynamoDB table: `PetsTable` with a primary key `petId` (String)
-  - Use `BillingMode: PAY_PER_REQUEST`
-  - Attach `DynamoDBCrudPolicy` to the Lambda for `PetsTable`
-  - Add environment variable `DYNAMODB_TABLE_NAME` for the Lambda
+### 🔄 Project Awareness & Context
+- **Always read `PLANNING.md`** at the start of a new conversation to understand the project's architecture, goals, style, and constraints.
+- **Check `TASK.md`** before starting a new task. If the task isn’t listed, add it with a brief description and today's date.
+- **Use consistent naming conventions, file structure, and architecture patterns** as described in `PLANNING.md`.
 
-### Application Structure
-- Node.js handler should live in `app.js` (or similar).
-- Use `uuid` for generating unique `petId`.
-- Use `new Date().toISOString()` for `createdAt` and `updatedAt`.
+### 🧱 Code Structure & Modularity
+- **Never create a file longer than 500 lines of code.** If a file approaches this limit, refactor by splitting it into modules or helper files.
+- **Organize code into clearly separated modules**, grouped by feature or responsibility.
+- **Use clear, consistent imports** (prefer relative imports within packages).
 
-### Lambda Function Behavior (`POST /pets`)
-Implement the following inside the Lambda handler:
-1. Parse incoming JSON body.
-2. Validate fields:
-   - `petName`: non-empty string
-   - `type`: "cat" or "dog" (case-insensitive)
-   - `color`, `breed`, `gender`: non-empty strings
-   - `birthday`: valid date in `YYYY-MM-DD` format
-3. Sanitize input (trim strings, normalize case where needed).
-4. Transform:
-   - Generate `petId`, `createdAt`, `updatedAt`
-5. Save item to DynamoDB using environment-provided table name.
-6. Return JSON response with `201 Created`, `petId`, and a message.
+Certainly, Plato Team Developer. Here's a **Jest-based testing guideline** that mirrors the structure and intent of your Pytest instructions:
 
-### Error Handling
-- Use a centralized error module:
-  - Return `400` for validation issues with detailed messages.
-  - Return `500` for unhandled exceptions.
-- All responses must be JSON-formatted.
+---
 
-### Local Testing Support
-- Use `sam build` and `sam local start-api` for local testing.
-- Support `curl` or Postman testing for:
-  - Successful pet creation
-  - Each validation failure case
-  - Malformed dates or missing fields
+### 🧪 Testing & Reliability with Jest
+* **Always write Jest unit tests for all new features** (functions, classes, components, endpoints, etc.).
+* **After any logic change**, ensure existing Jest tests still pass and update them when necessary.
+* **Place all tests in a `/__tests__/` directory**, structured to reflect the application's folder hierarchy.
+  * For each unit (function/module/component), include:
+    * ✅ **1 test for standard/expected behavior**
+    * ⚠️ **1 edge case test**
+    * ❌ **1 failure scenario test**
+* **Isolate and test each utility/helper function individually**, especially those used in agent tools or services.
 
-### Documentation
-- Include README.md updates for:
-  - Local dev setup
-  - Sample requests and responses
 
-## Restrictions
-- Do not use any external frameworks beyond `uuid` and AWS SDK.
-- Keep logic modular and clean.
+### ✅ Task Completion
+- **Mark completed tasks in `TASK.md`** immediately after finishing them.
+- Add new sub-tasks or TODOs discovered during development to `TASK.md` under a “Discovered During Work” section.
+- Also update the necessary Github Issues with relevant details.
 
-## Output Expectation
-Generate only functional, tested code that strictly adheres to this design. Avoid boilerplate comments. Use modern JavaScript (ES6+).
+### 📎 Style & Conventions for Node.js (JavaScript)
+* **Use pure JavaScript (ES6+), no TypeScript**.
+* **Follow the [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)**.
+* **Use `zod` for runtime data validation**.
+* Avoid deep **relative imports**. Configure **module aliases** for cleaner paths.
+* Use **Prettier** for code formatting and **ESLint** for linting.
+* **Document all functions** using **JSDoc** format:
+
+  ```js
+  /**
+   * Brief summary.
+   *
+   * @param {type} param1 - Description.
+   * @returns {type} Description.
+   */
+  ```
+
+### 📚 Documentation & Explainability
+- **Update `README.md`** when new features are added, dependencies change, or setup steps are modified.
+- **Comment non-obvious code** and ensure everything is understandable to a mid-level developer.
+- When writing complex logic, **add an inline `# Reason:` comment** explaining the why, not just the what.
+
+### 🧠 AI Behavior Rules
+- **Never assume missing context. Ask questions if uncertain.**
+- **Always confirm file paths & module names** exist before using
+- **Never delete or overwrite existing code** unless explicitly instructed to or if part of a task from `TASK.md`.
