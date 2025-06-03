@@ -3,7 +3,7 @@
 ## Project Setup & Initial Configuration
 
 - [ ]  Review PLANNING.md thoroughly
-- [ ]  Initialize a new AWS SAM project (`sam init`), make sure the generated files are still stored in the root directory.
+- [ ]  Initialize a new AWS SAM project (`sam init`), make sure the generated files are stored in the root directory.
 - [ ]  Configure `template.yaml` for the basic Lambda function (PetInfoFunction)
 - [ ]  Configure `template.yaml` for the API Gateway event source (`CreatePetApi`)
 - [ ]  Set up Node.js project structure (e.g., `package.json`, handler file `app.js` or similar)
