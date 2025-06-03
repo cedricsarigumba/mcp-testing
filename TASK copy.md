@@ -18,6 +18,10 @@
 - [ ]  Grant Lambda function (`PetInfoFunction`) `DynamoDBCrudPolicy` for `PetsTable` in `template.yaml`
 - [ ]  Set `DYNAMODB_TABLE_NAME` environment variable for the Lambda function in `template.yaml`
 
+## Sequence diagram
+
+- [ ]  Create a sequence diagram using PlantUML to illustrate the flow from API Gateway to Lambda to DynamoDB
+
 ## Lambda Function Implementation (Node.js - `PetInfoFunction`)
 
 - [ ]  **API Handler Logic (`POST /pets`)**
