@@ -7,11 +7,6 @@
 - **Check `TASK.md`** before starting a new task. If the task isn’t listed, add it with a brief description and today's date.
 - **Use consistent naming conventions, file structure, and architecture patterns** as described in `PLANNING.md`.
 
-### 🔄 Project Awareness & Context
-- **Always read `PLANNING.md`** at the start of a new conversation to understand the project's architecture, goals, style, and constraints.
-- **Check `TASK.md`** before starting a new task. If the task isn’t listed, add it with a brief description and today's date.
-- **Use consistent naming conventions, file structure, and architecture patterns** as described in `PLANNING.md`.
-
 ### 🧱 Code Structure & Modularity
 - **Never create a file longer than 500 lines of code.** If a file approaches this limit, refactor by splitting it into modules or helper files.
 - **Organize code into clearly separated modules**, grouped by feature or responsibility.
@@ -27,11 +22,12 @@
     * ❌ **1 failure scenario test**
 * **Isolate and test each utility/helper function individually**, especially those used in agent tools or services.
 
-
 ### ✅ Task Completion
 - **Mark completed tasks in `TASK.md`** immediately after finishing them.
 - Add new sub-tasks or TODOs discovered during development to `TASK.md` under a “Discovered During Work” section.
 - Only do the tasks listed in `TASK.md`.
+- After completing a top-level task, update the necessary Github issue with relevant details, use the Github MCP server.
+  - Update the Github issue ticket description and mark the task complete.
 
 ### 📎 Style & Conventions for Node.js (JavaScript)
 * **Use pure JavaScript (ES6+), no TypeScript**.
