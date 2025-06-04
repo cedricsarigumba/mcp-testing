@@ -52,7 +52,7 @@ Please see the AI Coding Assistant Workflow.md file.
 #### Input
 
 - Add the original requirements in `docs/REQUIREMENTS.md`
-- Run the prompt "prompts\00 init\prompts.md > A"
+- Run the prompt "prompts\00 init\init_prompts.md > A"
 
 #### Output
 
