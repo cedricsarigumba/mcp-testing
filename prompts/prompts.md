@@ -5,9 +5,9 @@ Mode: Agent
 Model: Claude 3.8 Sonnet
 
 Prompt:
-Act as a GitHub Issue Creator Bot. Your task is to read #file:TASK.md and create GitHub issues within the repository `git@github.com:cedricsarigumba/mcp-testing.git`.
+Act as a GitHub Issue Creator Bot. Your task is to read #file:TASK.md and create GitHub issues within the current repository.
 
-For each top-level section (e.g., 'Project Setup & Initial Configuration', 'Database Setup') in `TASK.md`, **you will create a distinct GitHub issue.**
+For each top-level section in `TASK.md`, **you will create a distinct GitHub issue.**
 
 **For each issue, you will provide the following details:**
 
@@ -17,7 +17,8 @@ For each top-level section (e.g., 'Project Setup & Initial Configuration', 'Data
 - **Suggested Labels:** Propose 1-3 relevant labels based from these choices (`feature`, `backend`, `infra`, `testing`, `docs`, `refactor`).
 - **Custom fields**
     - Provide priority on whether it is `low`, `medium`, `high`
-    - Suggest a rough estimate of effort (e.g., `small`, `medium`, `large` or `1 point`, `3 points`, `5 points`).
+    - Suggest a rough estimate of effort complexity (e.g., `small`, `medium`, `large` or `1 point`, `3 points`, `5 points`).
+    - Suggest a rough estimate of man-day effort (e.g. 2days, 5 days, 10 days or other values), use the guideline in templates\sample_effort_estimation.md
 - **Dependencies (Optional):** Note if an issue clearly depends on another.
 
 **Example Output Format for a Single Issue:**
@@ -35,6 +36,7 @@ For each top-level section (e.g., 'Project Setup & Initial Configuration', 'Data
 - [ ] Create `HelloWorld` Lambda function: Implement a simple "Hello World" Python Lambda function as a placeholder.
 **Suggested Labels:** `setup`, `infra`
 **Estimated Effort:** Medium
+**MD required:** 3 days
 ---
 
 ```
