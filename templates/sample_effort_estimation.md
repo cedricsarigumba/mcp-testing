@@ -115,11 +115,3 @@ This document outlines standardized guidelines for estimating **man-day effort**
 * Reference **historical estimates** and adjust based on outcome deltas.
 * For sprints, avoid tasks exceeding **3 man-days** – break them down.
 * Do **dry-runs of estimates** with engineers and PMs.
-
----
-
-## 📚 References
-
-* [Example Backlog Estimates](#)
-* [Historical Velocity Tracker Template](#)
-* [Developer Estimation Training Slides](#)
