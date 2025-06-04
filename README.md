@@ -11,31 +11,38 @@ Please see the AI Coding Assistant Workflow.md file.
 
 ## Folder Structure
 
-TBD
-
 ```
-ai_driven_dev_flow/
-├── README.md
+/ai_driven_dev_flow/
 ├── docs/
 │   ├── REQUIREMENTS.md
-│   ├── 00 requirements/
-│   │   └── (Document after GenAI generated output and a human does manual review)
-│   ├── 10 base design/
-│   │   └── (Document after GenAI generated output and a human does manual review)
-│   └── 90 ref/ ... Reference only. In actual project, this folder won't be necessary.
-│       └── output from GenAI/
-│           └── (Pure output from GenAI)
-└── prompts/
-    ├── 00 requirements/
-    │   ├── 00 INSTRUCTIONS.md
-    │   ├── 00 TASKS.md
-    │   └── output_format/
-    │       ├── 01 project overview.md
-    │       ├── 02 As is business flow.md
-    │       ├── 03 to be business flow.md
-    │       ├── 04 business requirements list.md
-    │       ├── 05 functional requirements list.md
-    │       └── 06 non functional requirements list.md
+│   ├── diagrams/                     # For sequence diagrams and other visual documentation
+├── src/                              # Source code directory
+│   ├── pets-api/                     # Main application code
+│   │   ├── models/                   # Data models
+│   │   ├── utils/                    # Utility functions
+│   │   └── tests/                    # Unit tests
+│   └── templates/                    # SAM templates
+│   │   └── template.yaml
+│   └── index.js
+├── .github/                          # GitHub workflows and templates
+│   ├── workflows/                    # CI/CD workflows
+│   ├── commit-instructions.md
+│   └── copilot-instructions.md
+├── .vscode/                          # VS Code configuration
+├── .gitignore
+├── prompts/                          # AI prompts organized by development phase
+│   ├── PLANNING.md                   # Overall planning document
+│   ├── architecture/                 # Architecture-related prompts
+│   ├── implementation/               # Implementation-related prompts
+│   └── requirements/                 # Requirements analysis prompts
+│       ├── prompts.md
+│       └── TASK.md
+├── examples/                         # Example code and templates
+│   ├── sample_PLANNING.md
+│   ├── sample_TASK.md
+│   └── sample_template.yaml
+├── README.md
+└── AI Coding Assistant Workflow.md
 ```
 
 ## How to use this?
