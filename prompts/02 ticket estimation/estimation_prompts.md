@@ -1,4 +1,4 @@
-## A. Creating the issues in Github
+## A.
 
 VSCode version: Version: 1.100.2
 Mode: Agent

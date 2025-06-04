@@ -47,7 +47,8 @@ Please see the AI Coding Assistant Workflow.md file.
 
 ## How to use this?
 
-### Preparation
+### 1. Preparation
+> **Reason:** This step ensures everyone starts with clear requirements and a shared plan, making the workflow organized and efficient.
 
 #### Input
 
@@ -56,8 +57,21 @@ Please see the AI Coding Assistant Workflow.md file.
 
 #### Output
 
-- It will generate two files under \prompts.
+- It will generate two files under \prompts:
   - PLANNING.md
   - TASK.md
 - Update the documents if needed
+
+### 2. Ticket estimation
+> **Reason:** Estimating tickets at this stage helps allocate resources effectively, set realistic timelines, and prioritize tasks based on complexity and effort required.
+
+#### Input
+
+- Run the prompt "prompts\02 ticket estimation\estimation_prompts.md > A"
+
+#### Output
+
+- The AI will review the task details, generate an estimate for each task, and automatically create a corresponding ticket issue in GitHub.
+- Each ticket will include the estimated effort, relevant context, and links to related documentation or requirements.
+- Review and adjust the generated tickets as needed before starting implementation.
 
