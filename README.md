@@ -47,28 +47,17 @@ Please see the AI Coding Assistant Workflow.md file.
 
 ## How to use this?
 
-### Preperation
-
-
-### Requirement Phase
+### Preparation
 
 #### Input
-TBD
 
 - Add the original requirements in `docs/REQUIREMENTS.md`
-- Select the following AI model and prompt.
-
-![How to send prompt for RD](image/how_to_send_prompt_for_RD.png)
+- Run the prompt "prompts\00 init\prompts.md > A"
 
 #### Output
-TBD
 
-- Generated requirements will be saved in `ai_driven_dev_flow/docs/00 requirements/`
-- Review the following documents:
-  1. Project overview (`01 project overview.md`)
-  2. As-is Business flow (`02 As is business flow.md`)
-  3. To-Be Business flow (`03 To Be business flow.md`)
-  4. Business requirements list (`04 Business requirements list.md`)
-  5. Functional requirements list (`05 Functional requirements list.md`)
-  6. Non-functional requirements list (`06 Non Functional requirements list.md`)
+- It will generate two files under \prompts.
+  - PLANNING.md
+  - TASK.md
 - Update the documents if needed
+
