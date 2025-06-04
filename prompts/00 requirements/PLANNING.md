@@ -156,8 +156,7 @@ The development will proceed in the following stages:
     * Validating and sanitizing the input data.
     * Storing the pet information in a DynamoDB table.
     * Returning appropriate success or custom error responses.
-* A DynamoDB table (`Pets`) schema defined and creatable via SAM.
-* The ability to test the entire flow locally using `sam local start-api`.
+* The ability to test the entire flow locally using `sam local invoke`.
 
 ## Notes
 

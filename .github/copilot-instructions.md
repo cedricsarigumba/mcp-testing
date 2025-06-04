@@ -4,7 +4,7 @@
 
 ### 🔄 Project Awareness & Context
 - **Always read `PLANNING.md`** at the start of a new conversation to understand the project's architecture, goals, style, and constraints.
-- **Check `TASK.md`** before starting a new task. If the task isn’t listed, add it with a brief description and today's date.
+- **Check `TASK.md`** before starting a new task. If the task isn’t listed, add it with a brief description and today's date. Only work on tasks listed in `TASK.md` that is marked as "[AI]".
 - **Use consistent naming conventions, file structure, and architecture patterns** as described in `PLANNING.md`.
 
 ### 🧱 Code Structure & Modularity
@@ -12,22 +12,13 @@
 - **Organize code into clearly separated modules**, grouped by feature or responsibility.
 - **Use clear, consistent imports** (prefer relative imports within packages).
 
-### 🧪 Testing & Reliability with Jest
-* **Always write Jest unit tests for all new features** (functions, classes, components, endpoints, etc.).
-* **After any logic change**, ensure existing Jest tests still pass and update them when necessary.
-* **Place all tests in a `/__tests__/` directory**, structured to reflect the application's folder hierarchy.
-  * For each unit (function/module/component), include:
-    * ✅ **1 test for standard/expected behavior**
-    * ⚠️ **1 edge case test**
-    * ❌ **1 failure scenario test**
-* **Isolate and test each utility/helper function individually**, especially those used in agent tools or services.
-
 ### ✅ Task Completion
-- **Mark completed tasks in `TASK.md`** immediately after finishing them.
-- Add new sub-tasks or TODOs discovered during development to `TASK.md` under a “Discovered During Work” section.
+- **Immediately mark each task as completed in TASK.md right after finishing** that specific task.
+- Add new sub-tasks or TODOs discovered during development to `TASK.md` under a "Discovered During Work" section.
 - Only do the tasks listed in `TASK.md`.
+- **Wait for human completion of prerequisite tasks [Human]** if a task depends on human intervention before proceeding.
 - After completing a top-level task, update the necessary Github issue with relevant details, use the Github MCP server.
-  - Update the Github issue ticket description and mark the task complete.
+  - Update the Github issue ticket description and mark the task complete.**Always use the Github MCP server** to check for existing code, documentation, and issues in the current repository.
 
 ### 📎 Style & Conventions for Node.js (JavaScript)
 * **Use pure JavaScript (ES6+), no TypeScript**.
