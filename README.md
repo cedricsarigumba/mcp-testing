@@ -30,13 +30,13 @@ Please see the AI Coding Assistant Workflow.md file.
 │   └── copilot-instructions.md
 ├── .vscode/                          # VS Code configuration
 ├── .gitignore
-├── prompts/                          # AI prompts organized by development phase
+├── prompts/                          # AI prompts
 │   ├── PLANNING.md                   # Overall planning document
+│   ├── PLANNING.md                   # Overall TASK document
 │   ├── prompts.md                    # Generic prompts
-│   ├── architecture/                 # Architecture-related prompts
-│   ├── implementation/               # Implementation-related prompts
-│   └── requirements/                 # Requirements analysis prompts
-│       └── TASK.md
+│   ├── 00 init/                      # To create the PLANNING.md and TASK.md files
+│       ├── TASK.md
+│       └── prompts.md
 ├── examples/                         # Example code and templates
 │   ├── sample_PLANNING.md
 │   ├── sample_TASK.md
