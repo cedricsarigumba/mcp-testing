@@ -40,7 +40,6 @@ For each top-level section (e.g., 'Project Setup & Initial Configuration', 'Data
 ---
 
 ```
+
 Proceed to break down the entire `TASK.md` accordingly.
 ```
-
-## 02. Creating the issues in Github
