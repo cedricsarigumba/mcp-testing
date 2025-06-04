@@ -18,8 +18,6 @@ The goal of this project is to develop a backend system consisting of a REST API
 /lambda-function/
 │
 ├── src/
-│   ├── handlers/
-│   │   └── index.js          # Main Lambda handler
 │   ├── services/
 │   │   └── service.js        # Business logic (e.g., DB, API calls)
 │   ├── utils/
@@ -27,6 +25,7 @@ The goal of this project is to develop a backend system consisting of a REST API
 │   └── config/
 │       └── config.js         # Environment/config management
 │
+├── index.js                  # Main Lambda handler
 ├── package.json              # Dependencies and scripts
 └── README.md                 # Project overview
 ```
@@ -37,46 +36,6 @@ The goal of this project is to develop a backend system consisting of a REST API
 -   **Database**: AWS DynamoDB
 -   **Infrastructure as Code/Local Development**: AWS SAM CLI
 -   **AWS SDK**: AWS SDK for JavaScript in Node.js (for DynamoDB interaction)
-
-## Development Process
-
-The development will proceed in the following stages:
-
-1.  **Project Setup & SAM Initialization**:
-    * Initialize a new AWS SAM project (`sam init`).
-    * Configure the `template.yaml` file for the basic Lambda function.
-    * Set up project structure for Node.js (e.g., `package.json`, handler file).
-
-2.  **Sequence Diagram Design (PlantUML):**:
-    * Create a sequence diagram using PlantUML to visualize the flow of a typical CreatePet API request.
-    * Include interactions between the client, API Gateway, Lambda function, and DynamoDB.
-    * Save the diagram as docs/create_pet_sequence.puml and render as an image (create_pet_sequence.png) for documentation.
-
-3.  **Lambda Function Implementation (Node.js)**:
-    * **API Handler**: Create the main handler function for the `POST /pets` endpoint.
-    * **Input Validation**:
-        * `petName`: Must be a non-empty string.
-        * `type`: Must be either "cat" or "dog" (case-insensitive, stored consistently).
-        * `color`: Must be a non-empty string.
-        * `breed`: Must be a non-empty string.
-        * `gender`: Must be a non-empty string.
-        * `birthday`: Must be a string in `YYYY-MM-DD` format and represent a valid date.
-    * **Input Sanitization**: Sanitize all string inputs to prevent potential injection issues (though DynamoDB is less susceptible than SQL, it's good practice).
-    * **Data Transformation**:
-        * Generate a unique `petId` (e.g., using `uuid` library).
-        * Add `createdAt` and `updatedAt` timestamps.
-    * **DynamoDB Interaction**:
-        * Use the AWS SDK to put the validated and transformed pet item into the DynamoDB table.
-    * **Response Handling**: Return appropriate success (e.g., 201 Created with petId) or error responses.
-
-4.  **Custom Error Handling Implementation**:
-    * Develop a centralized error handling mechanism.
-    * Define custom error types or use a standard approach for different error scenarios (e.g., validation errors, database errors).
-    * Ensure API responses for errors are consistent and informative (e.g., JSON payload with an error message).
-
-5.  **Local Testing with AWS SAM**:
-    * Use `sam local invoke` for direct Lambda function testing.
-    * Iteratively test validation, data storage, and error handling.
 
 ## Design Principles
 
@@ -146,7 +105,7 @@ The development will proceed in the following stages:
         ```
 
 ## AWS SAM `template.yaml` Highlights
-* Use the sample file in the samples\sample_template.yaml
+* Use the sample file in the templates\sample_template.yaml
 
 ## Expected Output
 
