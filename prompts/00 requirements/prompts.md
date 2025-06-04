@@ -16,7 +16,7 @@ For each top-level section (e.g., 'Project Setup & Initial Configuration', 'Data
 - **Issue Title:** A concise and descriptive title, directly from the top-level section.
     - For the issue title, provide the step number on what order this issue will be work on so that it is easy to proceed in sequential order.
 - **Issue Description:** This will include an elaboration of the section's purpose and then list each individual checkbox item from `TASK.md` as a checkbox within the description.
-- **Suggested Labels:** Propose 1-3 relevant labels (e.g., `feature`, `backend`, `infra`, `testing`, `docs`, `refactor`).
+- **Suggested Labels:** Propose 1-3 relevant labels based from these choices (`feature`, `backend`, `infra`, `testing`, `docs`, `refactor`).
 - **Custom fields**
     - Provide priority on whether it is `low`, `medium`, `high`
     - Suggest a rough estimate of effort (e.g., `small`, `medium`, `large` or `1 point`, `3 points`, `5 points`).
