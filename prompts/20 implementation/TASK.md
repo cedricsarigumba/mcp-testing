@@ -1,20 +1,5 @@
 # Task List: Pet Information REST API
 
-## Project Setup & Initial Configuration
-
-- [ ]  [AI] Review PLANNING.md thoroughly
-- [ ]  [AI] Initialize a new AWS SAM project (`sam init`), make sure the generated files are stored in a new folder pets_api.
-- [ ]  [AI] Set up Node.js project structure (e.g., package.json, handler file index.js or similar) — only a skeleton is needed for this part.
-- [ ]  [AI] Configure `template.yaml` for the basic Lambda function (PetInfoFunction)
-- [ ]  [AI] Configure `template.yaml` for the API Gateway event source (`CreatePetApi`)
-- [ ]  [AI] Test the project using sam local invoke and verify that it runs successfully
-- [ ]  [Human] Review and create Github pull request
-
-## Sequence diagram
-
-- [ ]  [AI] Create a sequence diagram using PlantUML to illustrate the flow from API Gateway to Lambda to DynamoDB. Put it under the docs directory.
-- [ ]  [Human] Review and create Github pull request
-
 ## Lambda Function Implementation
 
 - [ ]  **API Handler Logic (`POST /pets`)**
@@ -51,7 +36,8 @@
     - [ ]  [AI] Test input validation errors for each field.
     - [ ]  [AI] Test error handling for invalid date format for `birthday`.
     - [ ]  [AI] Test error handling for missing required fields.
-- [ ]  [Human] Review and approve unit tests.
+- [ ]  [AI] Create Github pull request
+- [ ]  [Human] Review
 
 ## Unit Testing
 
@@ -61,10 +47,12 @@
 - [ ]  [AI] Create mock tests for DynamoDB interactions.
 - [ ]  [AI] Create tests for error handling scenarios.
 - [ ]  [AI] Ensure test coverage for all critical paths in the Lambda handler.
-- [ ]  [Human] Review and approve unit tests.
+- [ ]  [AI] Create Github pull request
+- [ ]  [Human] Review
 
 ## Documentation
 
 - [ ]  [AI] Update README.md with setup instructions for local development.
 - [ ]  [AI] Update README.md with API usage examples (request/response).
-- [ ]  [Human] Review and create Github pull request
+- [ ]  [AI] Create Github pull request
+- [ ]  [Human] Review

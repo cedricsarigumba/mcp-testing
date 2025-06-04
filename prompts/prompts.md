@@ -2,11 +2,9 @@
 
 VSCode version: Version: 1.100.2
 Mode: Agent
-Model: GPT-4.1
+Model: Claude 3.8 Sonnet
 
 Prompt:
-
-```
 Act as a GitHub Issue Creator Bot. Your task is to read #file:TASK.md and create GitHub issues within the repository `git@github.com:cedricsarigumba/mcp-testing.git`.
 
 For each top-level section (e.g., 'Project Setup & Initial Configuration', 'Database Setup') in `TASK.md`, **you will create a distinct GitHub issue.**
@@ -40,6 +38,7 @@ For each top-level section (e.g., 'Project Setup & Initial Configuration', 'Data
 ---
 
 ```
-
 Proceed to break down the entire `TASK.md` accordingly.
-```
+
+## 02. Running the tasks
+Start creating the task mentioned in #file:TASK.md

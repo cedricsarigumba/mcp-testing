@@ -32,10 +32,10 @@ Please see the AI Coding Assistant Workflow.md file.
 ├── .gitignore
 ├── prompts/                          # AI prompts organized by development phase
 │   ├── PLANNING.md                   # Overall planning document
+│   ├── prompts.md                    # Generic prompts
 │   ├── architecture/                 # Architecture-related prompts
 │   ├── implementation/               # Implementation-related prompts
 │   └── requirements/                 # Requirements analysis prompts
-│       ├── prompts.md
 │       └── TASK.md
 ├── examples/                         # Example code and templates
 │   ├── sample_PLANNING.md
@@ -46,6 +46,9 @@ Please see the AI Coding Assistant Workflow.md file.
 ```
 
 ## How to use this?
+
+### Preperation
+
 
 ### Requirement Phase
 
