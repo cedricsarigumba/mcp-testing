@@ -53,7 +53,7 @@ Please see the AI Coding Assistant Workflow.md file.
 #### Input
 
 - Add the original requirements in `docs/REQUIREMENTS.md`
-- Run the prompt "prompts\00 init\init_prompts.md > A"
+- Run the prompt "prompts\00 Init\init_prompts.md > A"
 
 #### Output
 
@@ -67,7 +67,7 @@ Please see the AI Coding Assistant Workflow.md file.
 
 #### Input
 
-- Run the prompt "prompts\02 ticket estimation\estimation_prompts.md > A"
+- Run the prompt "prompts\02 Ticket estimation\estimation_prompts.md > A"
 
 #### Output
 

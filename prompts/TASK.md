@@ -3,7 +3,7 @@
 ## Project Setup & Initial Configuration
 
 - [ ]  [AI] Review PLANNING.md thoroughly
-- [ ]  [AI] Initialize a new AWS SAM project (`sam init`), make sure the generated files are stored in a new folder pets_api.
+- [ ]  [AI] Initialize a new AWS SAM project (`sam init`), make sure the generated files are stored in a new folder pets_api. For example, `sam init --name <your_project_name> --runtime <runtime> --app-template <template_name> --dependency-manager npm --no-interactive`
 - [ ]  [AI] Set up Node.js project structure (e.g., package.json, handler file index.js or similar) — only a skeleton is needed for this part.
 - [ ]  [AI] Configure `template.yaml` for the basic Lambda function (PetInfoFunction)
 - [ ]  [AI] Configure `template.yaml` for the API Gateway event source (`CreatePetApi`)

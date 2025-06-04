@@ -2,6 +2,9 @@
 ### Github MCP
 - **Always use the Github MCP server** to check for existing code, documentation, and issues in the current repository.
 
+### Filesystem  MCP
+- **Always use the Filesystem MCP server** read/write, refactor, multi-file, or files related tasks in the current repository.
+
 ### 🔄 Project Awareness & Context
 - **Always read `PLANNING.md`** at the start of a new conversation to understand the project's architecture, goals, style, and constraints.
 - **Check `TASK.md`** before starting a new task. If the task isn’t listed, add it with a brief description and today's date. Only work on tasks listed in `TASK.md` that is marked as "[AI]".
