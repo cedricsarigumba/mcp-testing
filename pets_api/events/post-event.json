@@ -1,0 +1,5 @@
+{
+  "httpMethod": "POST",
+  "path": "/pets",
+  "body": "{\"petName\":\"Buddy\",\"type\":\"dog\",\"color\":\"brown\",\"breed\":\"Labrador\",\"gender\":\"male\",\"birthday\":\"2020-01-15\"}"
+}

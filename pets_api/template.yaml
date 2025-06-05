@@ -1,0 +1,55 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Pet Information REST API using AWS Lambda and DynamoDB
+
+Globals:
+  Function:
+    Timeout: 30
+    MemorySize: 512
+
+Resources:
+  PetInfoFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub '${AWS::StackName}-PetInfoFunction'
+      Handler: index.handler
+      Runtime: nodejs20.x
+      CodeUri: ./
+      Description: Lambda function for Pet Information API
+      Events:
+        ApiEvent:
+          Type: Api
+          Properties:
+            Path: /pets
+            Method: post
+      Environment:
+        Variables:
+          AWS_REGION: "ap-northeast-1"
+          AWS_ACCESS_KEY_ID: "YourAccessKeyId"
+          AWS_SECRET_ACCESS_KEY: "YourSecretAccessKey"
+          AWS_SESSION_TOKEN: "YourSessionToken"
+          DYNAMODB_TABLE_NAME: "pets"
+
+  PetsTable:
+    Type: AWS::Serverless::SimpleTable
+    Properties:
+      TableName: pets
+      PrimaryKey:
+        Name: petId
+        Type: String
+      ProvisionedThroughput:
+        ReadCapacityUnits: 5
+        WriteCapacityUnits: 5
+
+Outputs:
+  PetInfoFunction:
+    Description: "Pet Info Lambda Function ARN"
+    Value: !GetAtt PetInfoFunction.Arn
+
+  PetInfoAPI:
+    Description: "API Gateway endpoint URL for Prod stage for Pet Info function"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/pets/"
+
+  PetInfoFunctionRole:
+    Description: "Implicit IAM Role created for Pet Info function"
+    Value: !GetAtt PetInfoFunctionRole.Arn

@@ -2,12 +2,12 @@
 
 ## Project Setup & Initial Configuration
 
-- [ ]  [AI] Review PLANNING.md thoroughly
-- [ ]  [AI] Set up Node.js project structure (package.json, index.js for AWS lambda handler, SAM template.yaml) — only a skeleton is needed for this part. Store it in a new folder pets_api.
-- [ ]  [AI] Configure `template.yaml` for the basic Lambda function (PetInfoFunction)
-- [ ]  [AI] Test the project using sam local invoke and verify that it runs successfully
-- [ ]  [AI] Create Github pull request in the using Github MCP server (make sure to update the related Github issue ticket)
-- [ ]  [Human] Review PR and modified the PR as needed
+- [x]  [AI] Review PLANNING.md thoroughly
+- [x]  [AI] Set up Node.js project structure (package.json, index.js for AWS lambda handler, SAM template.yaml) — only a skeleton is needed for this part. Store it in a new folder pets_api.
+- [x]  [AI] Configure `template.yaml` for the basic Lambda function (PetInfoFunction)
+- [x]  [AI] Test the project using sam local invoke and verify that it runs successfully
+- [ ]  [AI] Create Github pull request using Github MCP server (make sure to update the related Github issue ticket)
+- [x]  [Human] Review PR and modified the PR as needed
 
 ## Sequence diagram
 
