@@ -1,0 +1,71 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Pet Information REST API - A serverless API for storing pet information
+
+Globals:
+  Function:
+    Timeout: 30
+    MemorySize: 256
+    Runtime: nodejs20.x
+    Environment:
+      Variables:
+        # Replace these with actual values for your environment
+        AWS_REGION: "ap-northeast-1"
+        AWS_ACCESS_KEY_ID: "YourAccessKeyId"
+        AWS_SECRET_ACCESS_KEY: "YourSecretAccessKey"
+        AWS_SESSION_TOKEN: "YourSessionToken"
+        DYNAMODB_TABLE_NAME: "pets"
+
+Resources:
+  # DynamoDB Table Definition
+  PetsTable:
+    Type: AWS::Serverless::SimpleTable
+    Properties:
+      TableName: pets
+      PrimaryKey:
+        Name: petId
+        Type: String
+      ProvisionedThroughput:
+        ReadCapacityUnits: 1
+        WriteCapacityUnits: 1
+
+  # Lambda Function Definition
+  PetInfoFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub '${AWS::StackName}-PetInfoFunction'
+      CodeUri: ./
+      Handler: index.handler
+      Description: Lambda function for processing pet information requests
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref PetsTable
+      Events:
+        # API Gateway Event Definition
+        CreatePetApi:
+          Type: Api
+          Properties:
+            Path: /pets
+            Method: post
+            RestApiId: !Ref PetInfoApi
+
+  # API Gateway Definition
+  PetInfoApi:
+    Type: AWS::Serverless::Api
+    Properties:
+      Name: PetInfoApi
+      StageName: v1
+      EndpointConfiguration: REGIONAL
+
+Outputs:
+  PetInfoFunction:
+    Description: Pet Info Lambda Function ARN
+    Value: !GetAtt PetInfoFunction.Arn
+
+  PetInfoApi:
+    Description: API Gateway endpoint URL for the Pet Info API
+    Value: !Sub "https://${PetInfoApi}.execute-api.${AWS::Region}.amazonaws.com/v1/pets"
+
+  PetsTable:
+    Description: DynamoDB Table for Pet Information
+    Value: !Ref PetsTable
