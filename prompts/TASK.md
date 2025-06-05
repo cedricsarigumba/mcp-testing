@@ -4,7 +4,7 @@
 
 - [x]  [AI] Create a detailed `.puml` sequence diagram under `docs/diagrams` showing the interaction flow from API Gateway to Lambda to DynamoDB, including method calls, responses, and data passed.
 - [x]  [AI] Create Github pull request using Github MCP server (make sure to update the related Github issue ticket)
-- [ ]  [Human] Review PR and modified the PR as needed
+- [x]  [Human] Review PR and modified the PR as needed
 
 ## Lambda Function Implementation
 
