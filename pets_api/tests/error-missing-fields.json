@@ -1,0 +1,13 @@
+{
+  "body": "{\"petName\":\"Fluffy\",\"color\":\"white\",\"breed\":\"Persian\"}",
+  "resource": "/api/pets",
+  "path": "/api/pets",
+  "httpMethod": "POST",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "requestContext": {
+    "resourcePath": "/api/pets",
+    "httpMethod": "POST"
+  }
+}

@@ -8,48 +8,46 @@
 
 ## Lambda Function Implementation
 
-- [ ]  [AI] Review PLANNING.md thoroughly
-- [ ]  [AI] Set up Node.js project structure (package.json, index.js for AWS lambda handler, SAM template.yaml) — only a skeleton is needed for this part. Store it in a new folder pets_api.
-- [ ]  [AI] Configure `template.yaml` for the basic Lambda function (PetInfoFunction)
-- [ ]  [AI] Test the project using sam local invoke and verify that it runs successfully
-- [ ]  [AI] Create Github pull request using Github MCP server (make sure to update the related Github issue ticket)
-- [ ]  [Human] Review PR and modified the PR as needed
-- [ ]  **API Handler Logic (`POST /pets`)**
-    - [ ]  [AI] Create main Lambda handler function to process `POST` requests.
-    - [ ]  [AI] Parse incoming JSON request body.
-- [ ]  **Input Validation**
-    - [ ]  [AI] Implement validation for `petName` (non-empty string).
-    - [ ]  [AI] Implement validation for `type` (string, "cat" or "dog", case-insensitive).
-    - [ ]  [AI] Implement validation for `color` (non-empty string).
-    - [ ]  [AI] Implement validation for `breed` (non-empty string).
-    - [ ]  [AI] Implement validation for `gender` (non-empty string).
-    - [ ]  [AI] Implement validation for `birthday` (string, `YYYY-MM-DD` format, valid date).
-- [ ]  **Input Sanitization**
-    - [ ]  [AI] Implement basic sanitization for all string inputs.
-- [ ]  **Data Transformation**
-    - [ ]  [AI] Generate a unique `petId` (e.g., using `uuid` library).
-    - [ ]  [AI] Generate `createdAt` timestamp (ISO 8601).
-    - [ ]  [AI] Generate `updatedAt` timestamp (ISO 8601, same as `createdAt` on creation).
-- [ ]  **DynamoDB Interaction**
-    - [ ]  [AI] Implement logic to put the validated and transformed item into DynamoDB using AWS SDK.
-    - [ ]  [AI] Ensure `DYNAMODB_TABLE_NAME` environment variable is used.
-- [ ]  **Response Handling**
-    - [ ]  [AI] Implement success response (201 Created) with `petId` and success message.
-- [ ] Custom Error Handling
-    - [ ]  [AI] Develop a centralized error handling module/strategy within the Lambda.
-    - [ ]  [AI] Define structure for validation error responses (e.g., 400 Bad Request with details).
-    - [ ]  [AI] Define structure for general server error responses (e.g., 500 Internal Server Error).
-    - [ ]  [AI] Integrate error handling with API handler to return consistent error JSON payloads.
-- [ ] Local Testing
-    - [ ]  [Human] Setup the AWS DynamoDB table in AWS
-    - [ ]  [Human] Input the correct AWS credentials in `template.yaml`
-    - [ ]  [AI] Build the SAM application (`sam build`).
-    - [ ]  [AI] Invoke the function (`sam local invoke`) and test successful pet creation.
-    - [ ]  [AI] Test input validation errors for each field.
-    - [ ]  [AI] Test error handling for invalid date format for `birthday`.
-    - [ ]  [AI] Test error handling for missing required fields.
-- [ ]  [AI] Create Github pull request using Github MCP server (make sure to update the related Github issue ticket
-- [ ]  [Human] Review PR and modified the PR as needed
+- [x]  **Project preparation**
+    - [x]  [AI] Review PLANNING.md thoroughly
+    - [x]  [AI] Set up Node.js project structure (package.json, index.js for AWS lambda handler, SAM template.yaml) — only a skeleton is needed for this part. Store it in a new folder pets_api.
+    - [x]  [AI] Configure `template.yaml` for the basic Lambda function (PetInfoFunction)
+- [x]  **API Handler Logic (`POST /pets`)**
+    - [x]  [AI] Create main Lambda handler function to process `POST` requests.
+    - [x]  [AI] Parse incoming JSON request body.
+- [x]  **Input Validation**
+    - [x]  [AI] Implement validation for `petName` (non-empty string).
+    - [x]  [AI] Implement validation for `type` (string, "cat" or "dog", case-insensitive).
+    - [x]  [AI] Implement validation for `color` (non-empty string).
+    - [x]  [AI] Implement validation for `breed` (non-empty string).
+    - [x]  [AI] Implement validation for `gender` (non-empty string).
+    - [x]  [AI] Implement validation for `birthday` (string, `YYYY-MM-DD` format, valid date).
+- [x]  **Input Sanitization**
+    - [x]  [AI] Implement basic sanitization for all string inputs.
+- [x]  **Data Transformation**
+    - [x]  [AI] Generate a unique `petId` (e.g., using `uuid` library).
+    - [x]  [AI] Generate `createdAt` timestamp (ISO 8601).
+    - [x]  [AI] Generate `updatedAt` timestamp (ISO 8601, same as `createdAt` on creation).
+- [x]  **DynamoDB Interaction**
+    - [x]  [AI] Implement logic to put the validated and transformed item into DynamoDB using AWS SDK.
+    - [x]  [AI] Ensure `DYNAMODB_TABLE_NAME` environment variable is used.
+- [x]  **Response Handling**
+    - [x]  [AI] Implement success response (201 Created) with `petId` and success message.
+- [x] Custom Error Handling
+    - [x]  [AI] Develop a centralized error handling module/strategy within the Lambda.
+    - [x]  [AI] Define structure for validation error responses (e.g., 400 Bad Request with details).
+    - [x]  [AI] Define structure for general server error responses (e.g., 500 Internal Server Error).
+    - [x]  [AI] Integrate error handling with API handler to return consistent error JSON payloads.
+- [x] Local Testing
+    - [x]  [Human] Setup the AWS DynamoDB table in AWS
+    - [x]  [Human] Input the correct AWS credentials in `template.yaml`
+    - [x]  [AI] Build the SAM application (`sam build`).
+    - [x]  [AI] Invoke the function (`sam local invoke`) and test successful pet creation.
+    - [x]  [AI] Test input validation errors for each field.
+    - [x]  [AI] Test error handling for invalid date format for `birthday`.
+    - [x]  [AI] Test error handling for missing required fields.
+- [x]  [AI] Create Github pull request using Github MCP server (make sure to update the related Github issue ticket
+- [x]  [Human] Review PR and modified the PR as needed
 
 ## Unit Testing
 
