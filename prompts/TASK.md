@@ -2,17 +2,17 @@
 
 ## Project Setup & Initial Configuration
 
-- [x]  [AI] Review PLANNING.md thoroughly
-- [x]  [AI] Set up Node.js project structure (e.g., package.json, handler file index.js or similar) — only a skeleton is needed for this part. Store it in a new folder pets_api.
-- [x]  [AI] Configure `template.yaml` for the basic Lambda function (PetInfoFunction)
-- [x]  [AI] Configure `template.yaml` for the API Gateway event source (`CreatePetApi`)
-- [x]  [AI] Test the project using sam local invoke and verify that it runs successfully
-- [x]  [AI] Create Github pull request using Github MCP server (make sure to update the related Github issue ticket)
-- [x]  [Human] Review PR and modified the PR as needed
+- [ ]  [AI] Review PLANNING.md thoroughly
+- [ ]  [AI] Set up Node.js project structure (e.g., package.json, handler file index.js or similar) — only a skeleton is needed for this part. Store it in a new folder pets_api.
+- [ ]  [AI] Configure `template.yaml` for the basic Lambda function (PetInfoFunction)
+- [ ]  [AI] Configure `template.yaml` for the API Gateway event source (`CreatePetApi`)
+- [ ]  [AI] Test the project using sam local invoke and verify that it runs successfully
+- [ ]  [AI] Create Github pull request using Github MCP server (make sure to update the related Github issue ticket)
+- [ ]  [Human] Review PR and modified the PR as needed
 
 ## Sequence diagram
 
-- [ ]  [AI] Create a sequence diagram using PlantUML to illustrate the flow from API Gateway to Lambda to DynamoDB. Put it under the docs directory.
+- [ ]  [AI] Create a sequence diagram using PlantUML to illustrate the flow from API Gateway to Lambda to DynamoDB. Put it under the docs\diagrams directory.
 - [ ]  [AI] Create Github pull request using Github MCP server (make sure to update the related Github issue ticket
 - [ ]  [Human] Review PR and modified the PR as needed
 
