@@ -20,7 +20,7 @@
 - Add new sub-tasks or TODOs discovered during development to `TASK.md` under a "Discovered During Work" section.
 - Only do the tasks listed in `TASK.md`.
 - **Wait for human completion of prerequisite tasks [Human]** if a task depends on human intervention before proceeding.
-- After completing a top-level task, update the necessary Github issue with relevant details, use the Github MCP server.
+- After completing a top-level task, update the necessary Github issue with relevant details, use the Github MCP server (repository information is in `PLANNING.md`)
   - Update the Github issue ticket description and mark the task complete.**Always use the Github MCP server** to check for existing code, documentation, and issues in the current repository.
 
 ### 📎 Style & Conventions for Node.js (JavaScript)

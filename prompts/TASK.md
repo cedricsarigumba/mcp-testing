@@ -7,7 +7,7 @@
 - [ ]  [AI] Configure `template.yaml` for the basic Lambda function (PetInfoFunction)
 - [ ]  [AI] Configure `template.yaml` for the API Gateway event source (`CreatePetApi`)
 - [ ]  [AI] Test the project using sam local invoke and verify that it runs successfully
-- [ ]  [AI] Create Github pull request using Github MCP server (make sure to update the related Github issue ticket)
+- [ ]  [AI] Create Github pull request in the using Github MCP server (make sure to update the related Github issue ticket)
 - [ ]  [Human] Review PR and modified the PR as needed
 
 ## Sequence diagram

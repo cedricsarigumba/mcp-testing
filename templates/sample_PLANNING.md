@@ -104,3 +104,6 @@ During implementation:
 * Keep API stateless and RESTful
 * Validate inputs and handle edge cases
 * Use migrations (if ORM is chosen) for consistent schema setup
+
+## Repository information
+git@github.com:<account>/<repository>.git

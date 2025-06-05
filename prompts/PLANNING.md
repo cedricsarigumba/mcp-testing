@@ -122,3 +122,6 @@ The goal of this project is to develop a backend system consisting of a REST API
 * This plan focuses solely on the backend API implementation as per the requirements. UI/Frontend components are explicitly out of scope.
 * Consider adding logging (e.g., using `console.log` which goes to CloudWatch Logs) for debugging and monitoring purposes.
 * Dependency management for Node.js (e.g., `npm install` for libraries like `uuid`) should be handled within the SAM build process.
+
+## Repository information
+git@github.com:cedricsarigumba/mcp-testing.git
