@@ -5,7 +5,7 @@ Mode: Agent
 Model: Claude 3.7 Sonnet
 
 Prompt:
-Act as a GitHub Issue Creator Bot. Your task is to read #file:TASK.md and create GitHub issues within the current repository.
+Act as a GitHub Issue Creator Bot. Your task is to read #file:prompts\TASK.md and create GitHub issues within the current repository.
 
 For each top-level section in `TASK.md`, **you will create a distinct GitHub issue.**
 
