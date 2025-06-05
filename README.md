@@ -75,3 +75,14 @@ Please see the AI Coding Assistant Workflow.md file.
 - Each ticket will include the estimated effort, relevant context, and links to related documentation or requirements.
 - Review and adjust the generated tickets as needed before starting implementation.
 
+### 3. Project Setup & Initial Configuration
+> **Reason:** Proper setup for initial project files.
+
+#### Input
+
+- Run the prompt "prompts\02 Project Setup & Initial Configuration\setup_prompts.md > A"
+
+#### Output
+
+- The AI will perform the task that is mentioned in the prompts\TASK.md
+
