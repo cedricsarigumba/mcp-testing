@@ -7,13 +7,13 @@
 - [x]  [AI] Configure `template.yaml` for the basic Lambda function (PetInfoFunction)
 - [x]  [AI] Configure `template.yaml` for the API Gateway event source (`CreatePetApi`)
 - [x]  [AI] Test the project using sam local invoke and verify that it runs successfully
-- [ ]  [AI] Create Github pull request using MCP
-- [ ]  [Human] Review PR and modified the PR as needed
+- [x]  [AI] Create Github pull request using Github MCP server (make sure to update the related Github issue ticket)
+- [x]  [Human] Review PR and modified the PR as needed
 
 ## Sequence diagram
 
 - [ ]  [AI] Create a sequence diagram using PlantUML to illustrate the flow from API Gateway to Lambda to DynamoDB. Put it under the docs directory.
-- [ ]  [AI] Create Github pull request using MCP
+- [ ]  [AI] Create Github pull request using Github MCP server (make sure to update the related Github issue ticket
 - [ ]  [Human] Review PR and modified the PR as needed
 
 ## Lambda Function Implementation
@@ -52,7 +52,7 @@
     - [ ]  [AI] Test input validation errors for each field.
     - [ ]  [AI] Test error handling for invalid date format for `birthday`.
     - [ ]  [AI] Test error handling for missing required fields.
-- [ ]  [AI] Create Github pull request using MCP
+- [ ]  [AI] Create Github pull request using Github MCP server (make sure to update the related Github issue ticket
 - [ ]  [Human] Review PR and modified the PR as needed
 
 ## Unit Testing
@@ -63,12 +63,12 @@
 - [ ]  [AI] Create mock tests for DynamoDB interactions.
 - [ ]  [AI] Create tests for error handling scenarios.
 - [ ]  [AI] Ensure test coverage for all critical paths in the Lambda handler.
-- [ ]  [AI] Create Github pull request using MCP
+- [ ]  [AI] Create Github pull request using Github MCP server (make sure to update the related Github issue ticket
 - [ ]  [Human] Review PR and modified the PR as needed
 
 ## Documentation
 
 - [ ]  [AI] Update README.md with setup instructions for local development.
 - [ ]  [AI] Update README.md with API usage examples (request/response).
-- [ ]  [AI] Create Github pull request using MCP
+- [ ]  [AI] Create Github pull request using Github MCP server (make sure to update the related Github issue ticket
 - [ ]  [Human] Review PR and modified the PR as needed
