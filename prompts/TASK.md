@@ -12,7 +12,7 @@
 ## Sequence diagram
 
 - [x]  [AI] Create a sequence diagram using PlantUML to illustrate the flow from API Gateway to Lambda to DynamoDB. Put it under the docs\diagrams directory.
-- [ ]  [AI] Create Github pull request using Github MCP server (make sure to update the related Github issue ticket
+- [x]  [AI] Create Github pull request using Github MCP server (make sure to update the related Github issue ticket
 - [ ]  [Human] Review PR and modified the PR as needed
 
 ## Lambda Function Implementation
