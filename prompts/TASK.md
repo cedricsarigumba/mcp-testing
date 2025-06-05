@@ -11,8 +11,8 @@
 
 ## Sequence diagram
 
-- [x]  [AI] Create a sequence diagram using PlantUML to illustrate the flow from API Gateway to Lambda to DynamoDB. Put it under the docs\diagrams directory. Only create the `.puml` file.
-- [x]  [AI] Create Github pull request using Github MCP server (make sure to update the related Github issue ticket
+- [x]  [AI] Create a detailed `.puml` sequence diagram under `docs/diagrams` showing the interaction flow from API Gateway to Lambda to DynamoDB, including method calls, responses, and data passed.
+- [ ]  [AI] Create Github pull request using Github MCP server (make sure to update the related Github issue ticket)
 - [ ]  [Human] Review PR and modified the PR as needed
 
 ## Lambda Function Implementation
