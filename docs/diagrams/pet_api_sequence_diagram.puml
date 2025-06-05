@@ -1,0 +1,42 @@
+@startuml Pet Information API Flow
+
+actor Client
+participant "API Gateway" as API
+participant "Lambda Function" as Lambda
+database "DynamoDB" as DB
+
+== POST /pets - Create New Pet ==
+
+Client -> API: POST /pets (JSON Payload)
+activate API
+
+API -> Lambda: Invoke with Event
+activate Lambda
+
+Lambda -> Lambda: Validate input data
+note right: Check petName, type, color,\nbreed, gender, birthday
+
+alt Input Validation Failed
+    Lambda --> API: Return 400 Bad Request with error details
+    API --> Client: 400 Bad Request (JSON Error Response)
+else Input Validation Successful
+    Lambda -> Lambda: Generate petId, createdAt, updatedAt
+    Lambda -> DB: PutItem (Store pet record)
+    activate DB
+
+    alt DynamoDB Operation Failed
+        DB --> Lambda: Return Error
+        Lambda --> API: Return 500 Internal Server Error
+        API --> Client: 500 Internal Server Error (JSON Error Response)
+    else DynamoDB Operation Successful
+        DB --> Lambda: Success Response
+        deactivate DB
+        Lambda --> API: Return 201 Created with petId
+        API --> Client: 201 Created (JSON Success Response)
+    end
+end
+
+deactivate Lambda
+deactivate API
+
+@enduml
