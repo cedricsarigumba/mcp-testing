@@ -1,0 +1,90 @@
+@startuml Pet Information API Flow
+
+title Pet Information REST API - Sequence Diagram
+
+actor Client
+participant "API Gateway" as API
+participant "Lambda Function\n(PetInfoFunction)" as Lambda
+participant "Validation\nModule" as Validator
+participant "Error Handler\nModule" as ErrorHandler
+participant "DynamoDB\nService" as DBService
+database "DynamoDB\n(pets table)" as DB
+
+note over Client, DB
+  Sequence diagram showing the interaction flow
+  for POST /api/pets endpoint
+end note
+
+== Request Processing ==
+
+Client -> API: POST /api/pets
+activate API
+
+API -> Lambda: Invoke handler\nwith API Gateway event
+activate Lambda
+
+Lambda -> Lambda: Parse JSON request body
+note right: Extract pet data from event.body
+
+== Input Validation and Transformation ==
+
+Lambda -> Validator: Validate input fields
+activate Validator
+
+Validator -> Validator: Check petName (non-empty string)
+Validator -> Validator: Check type (cat or dog, case-insensitive)
+Validator -> Validator: Check color (non-empty string)
+Validator -> Validator: Check breed (non-empty string)
+Validator -> Validator: Check gender (non-empty string)
+Validator -> Validator: Check birthday (YYYY-MM-DD format)
+
+alt Input validation fails
+    Validator --> Lambda: Return validation errors
+    Lambda -> ErrorHandler: Handle validation error
+    activate ErrorHandler
+    ErrorHandler --> Lambda: Formatted 400 error response
+    Lambda --> API: Return 400 Bad Request
+    API --> Client: 400 Bad Request\nJSON error details
+    deactivate ErrorHandler
+else Input validation succeeds
+    Validator --> Lambda: Validated data
+    deactivate Validator
+
+    Lambda -> Lambda: Generate petId (UUID)
+    Lambda -> Lambda: Set createdAt timestamp
+    Lambda -> Lambda: Set updatedAt timestamp
+    Lambda -> Lambda: Sanitize string inputs
+
+    == Database Operation ==
+
+    Lambda -> DBService: putItem(pet data)
+    activate DBService
+
+    DBService -> DB: Put item in DynamoDB
+    activate DB
+
+    alt Database operation fails
+        DB --> DBService: Error
+        DBService --> Lambda: Database error
+        Lambda -> ErrorHandler: Handle database error
+        activate ErrorHandler
+        ErrorHandler --> Lambda: Formatted 500 error response
+        Lambda --> API: Return 500 Internal Server Error
+        API --> Client: 500 Internal Server Error\nJSON error message
+        deactivate ErrorHandler
+    else Database operation succeeds
+        DB --> DBService: Success
+        deactivate DB
+        DBService --> Lambda: Success response
+        deactivate DBService
+
+        == Response Handling ==
+
+        Lambda --> API: Return 201 Created with petId
+        deactivate Lambda
+        API --> Client: 201 Created\n{"petId": "uuid", "message": "Pet information saved successfully."}
+        deactivate API
+    end
+end
+
+@enduml
