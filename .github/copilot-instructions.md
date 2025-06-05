@@ -15,12 +15,11 @@
 - **Organize code into clearly separated modules**, grouped by feature or responsibility.
 - **Use clear, consistent imports** (prefer relative imports within packages).
 
-
 ## Before Starting a Task
 - **Always create a new feature branch** for each top-level task, following the naming convention `feat/<task-name>`.
 
 ### ✅ Task Completion
-- **Immediately mark each task as completed in TASK.md right after finishing** that specific task.
+- **Immediately mark each task as completed in prompts\TASK.md right after finishing** that specific task.
 - Add new sub-tasks or TODOs discovered during development to `TASK.md` under a "Discovered During Work" section.
 - Only do the tasks listed in `TASK.md`.
 - **Wait for human completion of prerequisite tasks [Human]** if a task depends on human intervention before proceeding.
