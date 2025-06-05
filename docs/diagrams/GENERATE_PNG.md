@@ -1,38 +1,59 @@
-# How to Generate PNG from PUML file
+# Generating Diagram Images
 
-To generate a PNG image from the PlantUML file, you have several options:
+This document provides instructions for generating image files from the PlantUML sequence diagrams.
 
-## Option 1: Using Visual Studio Code
+## Prerequisites
 
-1. Install the "PlantUML" extension in VS Code
-2. Open the .puml file
-3. Right-click in the editor and select "Preview Current Diagram" or use Alt+D to preview
-4. Use the extension's export feature to save as PNG
+To generate images from PlantUML files, you'll need:
 
-## Option 2: Using Online PlantUML Server
+1. Java Runtime Environment (JRE)
+2. PlantUML JAR file
 
-1. Copy the contents of the .puml file
-2. Visit http://www.plantuml.com/plantuml/uml/
-3. Paste the contents into the editor
-4. The diagram will render automatically
-5. Use the "Save as PNG" option to download the image
+## Installation
 
-## Option 3: Using PlantUML Command Line
+### Installing Java
 
-If you have Java installed and PlantUML JAR downloaded:
+If you don't have Java installed:
+
+- **Windows**: Download and install from [java.com](https://www.java.com/download/)
+- **macOS**: `brew install --cask java`
+- **Linux**: `sudo apt install default-jre` (Ubuntu/Debian) or `sudo yum install java` (CentOS/RHEL)
+
+### Getting PlantUML
+
+1. Download the PlantUML JAR file from [PlantUML website](https://plantuml.com/download)
+2. Or use package managers:
+   - **macOS**: `brew install plantuml`
+   - **Linux**: `sudo apt install plantuml` (Ubuntu/Debian)
+
+## Generating Images
+
+### Command Line
+
+Generate a PNG file:
 
 ```bash
 java -jar plantuml.jar pet_api_sequence_diagram.puml
 ```
 
-This will generate pet_api_sequence_diagram.png in the same directory.
-
-## Option 4: Using PlantUML Docker Image
-
-If you have Docker installed:
+Generate an SVG file:
 
 ```bash
-docker run --rm -v $(pwd):/data plantuml/plantuml pet_api_sequence_diagram.puml
+java -jar plantuml.jar -tsvg pet_api_sequence_diagram.puml
 ```
 
-This will generate the PNG file in the current directory.
+### VS Code Integration
+
+1. Install the "PlantUML" extension in VS Code
+2. Open the .puml file
+3. Press Alt+D to preview
+4. Export to PNG/SVG using the extension's export options
+
+### Online Generation
+
+If you don't want to install anything locally, you can use the online PlantUML server:
+
+1. Copy the contents of your .puml file
+2. Go to [PlantUML Web Server](http://www.plantuml.com/plantuml/uml/)
+3. Paste your PlantUML code
+4. Download the generated image
