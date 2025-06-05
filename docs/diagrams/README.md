@@ -1,30 +1,52 @@
-# Pet Information API Sequence Diagrams
+# Pet Information API Diagrams
 
-This directory contains sequence diagrams illustrating the flow of the Pet Information API.
+This directory contains diagrams that document the architecture and flow of the Pet Information API.
 
-## Pet API Sequence Diagram (`pet_api_sequence_diagram.puml`)
+## Sequence Diagram
 
-This diagram illustrates the complete flow for the `POST /pets` endpoint, from API Gateway through Lambda function to DynamoDB storage.
+The `pet_api_sequence_diagram.puml` file contains a PlantUML sequence diagram that illustrates the interaction flow between:
 
-### Workflow Steps:
+1. Client
+2. API Gateway
+3. Lambda Function
+4. DynamoDB
 
-1. Client sends a POST request to the API Gateway endpoint with pet information
-2. API Gateway forwards the request to the Lambda function
-3. Lambda function validates the input data
-   - If validation fails: Returns 400 Bad Request with error details
-   - If validation succeeds: Continues processing
-4. Lambda generates additional fields (petId, timestamps)
-5. Lambda attempts to store the pet record in DynamoDB
-   - If DynamoDB operation fails: Returns 500 Internal Server Error
-   - If DynamoDB operation succeeds: Returns 201 Created with petId
+The sequence diagram covers:
+- Request processing from client to API Gateway to Lambda
+- Data validation within Lambda
+- Different paths for validation success/failure
+- DynamoDB interactions for storing pet data
+- Response handling for success and error cases
+- Error handling mechanisms
 
-### How to View/Edit:
+## Viewing the Diagrams
 
-The diagram is created using PlantUML. You can render it using:
-- VS Code with PlantUML extension
-- Online PlantUML editor (http://www.plantuml.com/plantuml/uml/)
-- PlantUML command-line tools
+To view the PlantUML diagram:
 
-### Visual Representation
+1. Install a PlantUML extension/viewer for your IDE (e.g., PlantUML extension for VS Code)
+2. Or use the [PlantUML Web Server](http://www.plantuml.com/plantuml/uml/)
+3. Open the `.puml` file with your PlantUML viewer
 
-For a rendered PNG version of this diagram, see `pet_api_sequence_diagram.png` (if available).
+## Generating PNG/SVG Files
+
+You can generate PNG or SVG files from the PlantUML source using:
+
+```bash
+plantuml pet_api_sequence_diagram.puml
+```
+
+This will create a `pet_api_sequence_diagram.png` file.
+
+For SVG output:
+
+```bash
+plantuml -tsvg pet_api_sequence_diagram.puml
+```
+
+## Adding New Diagrams
+
+When adding new diagrams, please follow these guidelines:
+1. Use PlantUML for consistency
+2. Include a descriptive filename
+3. Add documentation in this README about the purpose of the diagram
+4. Follow the same styling conventions as existing diagrams
