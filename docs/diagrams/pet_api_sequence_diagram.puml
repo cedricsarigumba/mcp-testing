@@ -1,42 +1,115 @@
-@startuml Pet Information API Flow
+@startuml Pet Information API Sequence Diagram
+
+!theme plain
+skinparam responseMessageBelowArrow true
+skinparam sequenceArrowThickness 2
+skinparam roundcorner 10
+skinparam maxMessageSize 200
+skinparam sequenceParticipant {
+    BackgroundColor WhiteSmoke
+    BorderColor DarkGrey
+    FontColor Black
+}
+
+title Pet Information REST API - Interaction Flow
 
 actor Client
-participant "API Gateway" as API
-participant "Lambda Function" as Lambda
-database "DynamoDB" as DB
+participant "API Gateway" as APIGateway
+participant "Lambda Function\n(PetInfoFunction)" as Lambda
+participant "DynamoDB\n(PetsTable)" as DynamoDB
 
-== POST /pets - Create New Pet ==
+== Request Processing ==
 
-Client -> API: POST /pets (JSON Payload)
-activate API
+Client -> APIGateway: POST /api/pets (with pet JSON)
+note right of Client
+{
+  "petName": "String",
+  "type": "String (cat or dog)",
+  "color": "String",
+  "breed": "String",
+  "gender": "String",
+  "birthday": "String (YYYY-MM-DD)"
+}
+end note
 
-API -> Lambda: Invoke with Event
-activate Lambda
+APIGateway -> Lambda: Invoke Lambda with event object
+note right of APIGateway
+Event contains HTTP method, path,
+headers, query parameters,
+and request body
+end note
 
+== Data Processing ==
+
+Lambda -> Lambda: Parse request body
 Lambda -> Lambda: Validate input data
-note right: Check petName, type, color,\nbreed, gender, birthday
+note right of Lambda
+- Validate petName (non-empty string)
+- Validate type (cat or dog, case-insensitive)
+- Validate color (non-empty string)
+- Validate breed (non-empty string)
+- Validate gender (non-empty string)
+- Validate birthday (YYYY-MM-DD format, valid date)
+end note
 
-alt Input Validation Failed
-    Lambda --> API: Return 400 Bad Request with error details
-    API --> Client: 400 Bad Request (JSON Error Response)
-else Input Validation Successful
-    Lambda -> Lambda: Generate petId, createdAt, updatedAt
-    Lambda -> DB: PutItem (Store pet record)
-    activate DB
+alt Validation Failed
+    Lambda --> APIGateway: Return 400 Bad Request with validation details
+    APIGateway --> Client: 400 Bad Request JSON response
+    note right of Client
+    {
+      "error": "Validation failed",
+      "details": [
+        { "field": "fieldName", "message": "Error message" }
+      ]
+    }
+    end note
+else Validation Successful
+    Lambda -> Lambda: Generate petId (UUID)
+    Lambda -> Lambda: Set timestamps (createdAt, updatedAt)
 
-    alt DynamoDB Operation Failed
-        DB --> Lambda: Return Error
-        Lambda --> API: Return 500 Internal Server Error
-        API --> Client: 500 Internal Server Error (JSON Error Response)
-    else DynamoDB Operation Successful
-        DB --> Lambda: Success Response
-        deactivate DB
-        Lambda --> API: Return 201 Created with petId
-        API --> Client: 201 Created (JSON Success Response)
+    Lambda -> DynamoDB: PutItem operation
+    note right of Lambda
+    {
+      "petId": "generated-uuid",
+      "petName": "...",
+      "type": "...",
+      "color": "...",
+      "breed": "...",
+      "gender": "...",
+      "birthday": "...",
+      "createdAt": "ISO timestamp",
+      "updatedAt": "ISO timestamp"
+    }
+    end note
+
+    alt DynamoDB Operation Successful
+        DynamoDB --> Lambda: Success response
+        Lambda --> APIGateway: Return 201 Created with petId
+        APIGateway --> Client: 201 Created JSON response
+        note right of Client
+        {
+          "petId": "generated-uuid-string",
+          "message": "Pet information saved successfully."
+        }
+        end note
+    else DynamoDB Operation Failed
+        DynamoDB --> Lambda: Error response
+        Lambda --> APIGateway: Return 500 Internal Server Error
+        APIGateway --> Client: 500 Internal Server Error JSON response
+        note right of Client
+        {
+          "error": "An internal server error occurred."
+        }
+        end note
     end
 end
 
-deactivate Lambda
-deactivate API
+== Error Handling ==
+
+group Centralized Error Handling (within Lambda)
+    Lambda -> Lambda: Catch all unhandled errors
+    Lambda --> APIGateway: Return appropriate error code and message
+    APIGateway --> Client: Formatted error response
+end
 
 @enduml
