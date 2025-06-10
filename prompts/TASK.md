@@ -3,8 +3,8 @@
 ## Sequence diagram
 
 - [x]  [AI] Create a detailed `.puml` sequence diagram under `docs/diagrams` showing the interaction flow from API Gateway to Lambda to DynamoDB, including method calls, responses, and data passed.
-- [x]  [AI] Create Github pull request using Github MCP server (make sure to update the related Github issue ticket)
-- [x]  [Human] Review PR and modified the PR as needed
+- [x]  [Human] Review the changes and modified as needed
+- [x]  [Human] Create PR
 
 ## Lambda Function Implementation
 
@@ -46,23 +46,23 @@
     - [x]  [AI] Test input validation errors for each field.
     - [x]  [AI] Test error handling for invalid date format for `birthday`.
     - [x]  [AI] Test error handling for missing required fields.
-- [x]  [AI] Create Github pull request using Github MCP server (make sure to update the related Github issue ticket
-- [x]  [Human] Review PR and modified the PR as needed
+- [x]  [Human] Review the changes and modified as needed
+- [x]  [Human] Create PR
 
 ## Unit Testing
 
-- [ ]  [AI] Set up testing framework (Jest) for the project.
-- [ ]  [AI] Create unit tests for input validation functions.
-- [ ]  [AI] Create unit tests for data transformation functions.
-- [ ]  [AI] Create mock tests for DynamoDB interactions.
-- [ ]  [AI] Create tests for error handling scenarios.
-- [ ]  [AI] Ensure test coverage for all critical paths in the Lambda handler.
-- [ ]  [AI] Create Github pull request using Github MCP server (make sure to update the related Github issue ticket
-- [ ]  [Human] Review PR and modified the PR as needed
+- [x]  [AI] Set up testing framework (Jest) for the project.
+- [x]  [AI] Create unit tests for input validation functions.
+- [x]  [AI] Create unit tests for data transformation functions.
+- [x]  [AI] Create mock tests for DynamoDB interactions.
+- [x]  [AI] Create tests for error handling scenarios.
+- [x]  [AI] Ensure test coverage for all critical paths in the Lambda handler.
+- [x]  [Human] Review the changes and modified as needed
+- [x]  [Human] Create PR
 
 ## Documentation
 
 - [ ]  [AI] Update README.md with setup instructions for local development.
 - [ ]  [AI] Update README.md with API usage examples (request/response).
-- [ ]  [AI] Create Github pull request using Github MCP server (make sure to update the related Github issue ticket
-- [ ]  [Human] Review PR and modified the PR as needed
+- [ ]  [Human] Review the changes and modified as needed
+- [ ]  [Human] Create PR

@@ -47,12 +47,6 @@ async function putPetItem(petData) {
   try {
     console.log(`Storing pet data in DynamoDB table '${DYNAMODB_TABLE_NAME}'`);
 
-    // For local testing, just log the data and return success
-    if (isLocalTesting) {
-      console.log('LOCAL TEST MODE: Would store item in DynamoDB:', JSON.stringify(petData, null, 2));
-      return { success: true };
-    }
-
     const result = await dynamoDb.put(params).promise();
     console.log('Successfully stored pet data:', petData.petId);
     return result;
@@ -78,25 +72,10 @@ async function getPetItem(petId) {
   };
 
   try {
-    // For local testing, return mock data
-    if (isLocalTesting) {
-      console.log('LOCAL TEST MODE: Would retrieve item from DynamoDB with petId:', petId);
-      return {
-        petId,
-        petName: 'Test Pet',
-        type: 'cat',
-        color: 'gray',
-        breed: 'Unknown',
-        gender: 'unknown',
-        birthday: '2020-01-01',
-        createdAt: new Date().toISOString(),
-        updatedAt: new Date().toISOString()
-      };
-    }
-
     const result = await dynamoDb.get(params).promise();
     return result.Item;
   } catch (error) {
+    console.error('Failed to retrieve pet data from DynamoDB:', error);
     throw new DatabaseError('Failed to retrieve pet data', error);
   }
 }
