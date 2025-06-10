@@ -86,3 +86,88 @@ Please see the AI Coding Assistant Workflow.md file.
 
 - The AI will perform the task that is mentioned in the prompts\TASK.md
 
+## Quick Start Guide
+
+### Prerequisites
+
+1. **Node.js 20.x** - [Download](https://nodejs.org/)
+2. **AWS SAM CLI** - [Installation Guide](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/install-sam-cli.html)
+3. **AWS CLI** - Configured with your credentials
+4. **Git** - For version control
+
+### Running the Pet Information API
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/cedricsarigumba/mcp-testing.git
+   cd mcp-testing/pets_api
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Configure AWS credentials:**
+   ```bash
+   aws configure
+   ```
+
+4. **Build and start the local API:**
+   ```bash
+   sam build
+   sam local start-api
+   ```
+
+5. **Test the API:**
+   ```bash
+   curl -X POST http://localhost:3000/api/pets \
+     -H "Content-Type: application/json" \
+     -d '{
+       "petName": "Fluffy",
+       "type": "cat",
+       "color": "white",
+       "breed": "Persian",
+       "gender": "female",
+       "birthday": "2020-03-15"
+     }'
+   ```
+
+### API Usage Examples
+
+#### Create a Pet Record
+
+**Endpoint:** `POST /api/pets`
+
+**Request Body:**
+```json
+{
+  "petName": "Max",
+  "type": "dog",
+  "color": "brown",
+  "breed": "Golden Retriever",
+  "gender": "male",
+  "birthday": "2019-06-15"
+}
+```
+
+**Success Response (201):**
+```json
+{
+  "petId": "123e4567-e89b-12d3-a456-426614174000",
+  "message": "Pet information saved successfully."
+}
+```
+
+**Error Response (400):**
+```json
+{
+  "error": "Validation failed",
+  "details": [
+    { "field": "type", "message": "Type must be either 'cat' or 'dog'" }
+  ]
+}
+```
+
+For detailed API documentation and more examples, see the [pets_api README](./pets_api/README.md).
+
