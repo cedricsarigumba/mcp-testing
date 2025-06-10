@@ -64,5 +64,5 @@
 
 - [x]  [AI] Update README.md with setup instructions for local development.
 - [x]  [AI] Update README.md with API usage examples (request/response).
-- [ ]  [Human] Review the changes and modified as needed
-- [ ]  [Human] Create PR
+- [x]  [Human] Review the changes and modified as needed
+- [x]  [Human] Create PR
